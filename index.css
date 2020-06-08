@@ -26,13 +26,13 @@ body{
     
 }
 .navbar h1{
-    font-size: 38px;
-    height: 38px;
+    font-size: 28px;
+    height: 28px;
     font-weight: lighter;
     
 }
 .navbar span{
-    font-size: 48px;
+    font-size: 38px;
     font-weight: bold;
     height: 38px;
     
@@ -43,18 +43,20 @@ body{
     margin: 20px auto;
 }
 .sections h2{
-    font-size: 68px;
+    font-size: 58px;
     font-weight: bolder;
+    margin-bottom: 0px;
 }
 .sections p{
-    font-size: 58px;
+    margin-top: 0px;
+    font-size: 48px;
     color: #493F3F;
     width: 600px;
 }
 /* search */
 .search{
     width: 427px;
-    height: 67px;
+    height: 57px;
     display: grid;
     grid-template-columns: auto 50px;
     margin-top: 20px ;
@@ -68,6 +70,7 @@ body{
     border-bottom-left-radius: 4px;
     background-color: transparent;
     width: 100%;
+    padding: 10px;
     
     
 }
@@ -90,4 +93,26 @@ body{
     width: 16px;
     height: 16px;
     margin: auto auto;
+}
+.search:hover{
+    background-color: rgb(112, 189, 224);
+}
+
+.search button:hover{
+    background-color: rgb(188, 228, 247);
+}
+/* random button */
+#random-button{
+    height: 57px;
+    background-color: #FCBC6D;
+    border: 2px solid #493F3F;
+    border-radius: 3px;
+    width: 140px;
+    padding: 5px;
+    text-align: center;
+    margin: 2px auto;
+}
+
+#random-button:hover{
+    transform: scale(1.1,1.1);
 }
