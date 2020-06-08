@@ -17,8 +17,14 @@ body{
 
 }
 /* header */
+.container.flexbox{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .navbar{
     background-color: #493F3F;
+    
 }
 .navbar a{
     display: block;
@@ -37,7 +43,10 @@ body{
     height: 38px;
     
 }
-
+#filtros a{
+    font-size: 23px;
+    color: white;
+}
 /* secciones */
 .sections{
     margin: 20px auto;
