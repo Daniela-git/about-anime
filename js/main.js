@@ -7,18 +7,26 @@ let button_search = document.getElementById("search_button");
 
 // EVENT LISTENERS
 button_search.addEventListener("click", sendSearch);
+input.addEventListener("keypress",key)
 
 // FUNCIONES
-function sendSearch(e) {
+async function sendSearch(e) {
     e.preventDefault()
     let toSearch = getSearch()
-    let resultFromApi = api.search()
-    console.log(toSearch)
-    console.log(resultFromApi)
+    let animes = await api.search(toSearch)
+    let anime = animes.results[0]
+    // image_url, title, episodios(si no es null), airing, score
+    console.log(anime)
     
 }
 
 function getSearch() {
     let toSearch = input.value;
     return toSearch
+}
+function key(e) {
+    if (e.key == "Enter"){
+        sendSearch(e)
+    }
+    
 }
