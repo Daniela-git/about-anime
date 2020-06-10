@@ -49,6 +49,7 @@ body{
 /* secciones */
 .sections{
     margin: 1.25rem auto;
+    position: relative;
 }
 .sections h2{
     font-size: 3.625rem;
@@ -72,6 +73,7 @@ body{
     display: grid;
     grid-template-columns: auto 3.125rem;
     margin-top: 1.25rem ;
+    
 }
 .search input {
     border-left: 0.1875rem solid white;
@@ -131,9 +133,14 @@ body{
 }
 
 .load{
-    display: inline-flex;
     width: 20px;
-    margin: auto;
+    position: absolute;
+    left: 27rem;
+    bottom: 15px;
+    visibility: hidden;
+}
+.show{
+    visibility: visible;
 }
 
 
