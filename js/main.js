@@ -1,10 +1,12 @@
 import * as Api from "/js/api.js";
+import * as Interfaz from "/js/ui.js";
 
 // VARIABLES
 const api = new Api.Api();
+const ui = new Interfaz.Interfaz();
 let input = document.getElementById("search");
 let button_search = document.getElementById("search_button");
-let inicio_imagenes = document.querySelector(".inicio_imagenes");
+
 
 // EVENT LISTENERS
 button_search.addEventListener("click", sendSearch);
@@ -18,7 +20,7 @@ async function sendSearch(e) {
 	let anime = animes.results[0];
 	// image_url, title, episodios(si no es null), airing, score
 	// console.log(anime);
-	showSearchResults(animes.results);
+	ui.showSearchResults(animes.results);
 }
 
 function getSearch() {
@@ -31,19 +33,4 @@ function key(e) {
 	}
 }
 
-function showSearchResults(animes) {
-    let html = ''
-    animes.forEach(anime => {
-        html += `
-        <div class="search_result">
-            <span>${anime.title}</span>
-            <img src="${anime.image_url}" alt="">
-            <ul class="features_anime">
-                <li>episodes: ${anime.episodes}</li>
-                <li>airing: ${anime.airing}</li>
-                <li>score: ${anime.score}</li>
-            </ul>
-        </div>`
-    });
-    inicio_imagenes.innerHTML = html
-}
+
