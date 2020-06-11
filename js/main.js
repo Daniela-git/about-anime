@@ -6,7 +6,7 @@ const api = new Api.Api();
 const ui = new Interfaz.Interfaz();
 let input = document.getElementById("search");
 let button_search = document.getElementById("search_button");
-
+let load = document.querySelector(".load");
 
 // EVENT LISTENERS
 button_search.addEventListener("click", sendSearch);
@@ -15,6 +15,7 @@ input.addEventListener("keypress", key);
 // FUNCIONES
 async function sendSearch(e) {
 	e.preventDefault();
+	load.classList.add("show")
 	let toSearch = getSearch();
 	let animes = await api.search(toSearch);
 	let anime = animes.results[0];
@@ -32,5 +33,3 @@ function key(e) {
 		sendSearch(e);
 	}
 }
-
-
