@@ -10,4 +10,13 @@ export class Api {
 
 		return animes;
 	}
+	async random(page) {
+		const link = `http://api.jikan.moe/v3/top/anime/${page}`;
+		//esperando la respuesta
+		let respuesta = await fetch(link);
+
+		//pasando la respuesta a json
+		let animes = await respuesta.json();
+		return animes
+	}
 }

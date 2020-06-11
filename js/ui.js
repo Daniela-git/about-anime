@@ -15,32 +15,51 @@ export class Interfaz {
 		} else {
 			animes.forEach((anime) => {
 				html += `
-                <div class="search_result">
-                    <span>${anime.title}</span>
-                    <img src="${anime.image_url}" alt="">
-                    <ul class="features_anime">
-                        <li>episodes: ${anime.episodes}</li>
-                        <li>airing: ${anime.airing}</li>
-                        <li>score: ${anime.score}</li>
-                    </ul>
-                </div>`;
+				<div class="result">
+					<span>${anime.title}</span>
+					<img src="${anime.image_url}" alt="">
+					<ul class="features_anime">
+						<li>episodes: ${anime.episodes}</li>
+						<li>airing: ${anime.airing}</li>
+						<li>score: ${anime.score}</li>
+					</ul>
+				</div>`;
 			});
 			load.classList.remove("show");
 			inicio_imagenes.innerHTML = html;
 		}
 	}
+	showRandom(animes) {
+		let inicio_imagenes = document.querySelector(".inicio_imagenes");
+		let load = document.querySelector(".load");
+		let html = "";
+		animes.forEach((anime) => {
+			html += `
+				<div class="result">
+					<span>${anime.title}</span>
+					<img src="${anime.image_url}" alt="">
+					<ul class="features_anime">
+						<li>episodes: ${anime.episodes}</li>
+						<li>type: ${anime.type}</li>
+						<li>score: ${anime.score}</li>
+					</ul>
+				</div>`;
+		});
+		load.classList.remove("show");
+		inicio_imagenes.innerHTML = html;
+	}
 	setFilter() {
-        // se eligen cada uno de los selects y la lista que se va a usar para llenarlos
+		// se eligen cada uno de los selects y la lista que se va a usar para llenarlos
 		const genres = document.getElementById("genres");
 		const generos = this.allGeners();
-        const years = document.getElementById("years");
-        const anios = this.allYears()
-        const seasons = document.getElementById("seasons");
-        const temporada = ["Fall","Sumer","Spring","Winter"]
-        // mandamos la información necesaria para que se creen las opciones
+		const years = document.getElementById("years");
+		const anios = this.allYears();
+		const seasons = document.getElementById("seasons");
+		const temporada = ["Fall", "Sumer", "Spring", "Winter"];
+		// mandamos la información necesaria para que se creen las opciones
 		this.setOptions(genres, generos);
-        this.setOptions(years, anios);
-        this.setOptions(seasons, temporada);
+		this.setOptions(years, anios);
+		this.setOptions(seasons, temporada);
 	}
 	setOptions(element, list) {
 		for (let i = 0; i < list.length; i++) {
@@ -50,15 +69,15 @@ export class Interfaz {
 			element.appendChild(option);
 		}
 	}
-    allYears(){
-        let anios = []
-        const max = new Date().getFullYear()
-        const min = max - 61
+	allYears() {
+		let anios = [];
+		const max = new Date().getFullYear();
+		const min = max - 61;
 		for (let i = max; i > min; i--) {
-            anios.push(i)
-        }
-        return anios
-    }
+			anios.push(i);
+		}
+		return anios;
+	}
 	allGeners() {
 		let genres = [
 			"Action",

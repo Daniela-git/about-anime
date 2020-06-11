@@ -7,12 +7,14 @@ const ui = new Interfaz.Interfaz();
 const input = document.getElementById("search");
 const button_search = document.getElementById("search_button");
 const load = document.querySelector(".load");
-let filtros = document.getElementById("filtros")
+const filtros = document.getElementById("filtros")
+const random = document.getElementById("random-button")
 
 // EVENT LISTENERS
+document.addEventListener("DOMContentLoaded",showFilter)
 button_search.addEventListener("click", sendSearch);
 input.addEventListener("keypress", key);
-document.addEventListener("DOMContentLoaded",showFilter)
+random.addEventListener("click",randomAnime)
 filtros.addEventListener("click",(e)=>{
 	document.querySelector(".filtros").classList.toggle('show-filtro')
 	
@@ -39,4 +41,20 @@ function key(e) {
 
 function showFilter(e){
 	ui.setFilter()
+}
+
+async function randomAnime(e){
+	e.preventDefault()
+	const page = Math.floor(Math.random() * 10) + 1;
+	console.log(page)
+	const result= await api.random(page)
+	const animes = []
+	// mezclando el array
+	while(result.top.length !== 0){
+		let randomIndex = Math.floor(Math.random() * result.top.length)
+		animes.push(result.top[randomIndex])
+		result.top.splice(randomIndex,1)
+	}
+	ui.showRandom(animes.slice(0, 3))
+
 }
