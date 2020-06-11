@@ -7,10 +7,12 @@ const ui = new Interfaz.Interfaz();
 let input = document.getElementById("search");
 let button_search = document.getElementById("search_button");
 let load = document.querySelector(".load");
+let filtros = document.getElementById("filtros")
 
 // EVENT LISTENERS
 button_search.addEventListener("click", sendSearch);
 input.addEventListener("keypress", key);
+filtros.addEventListener("click",showFilter)
 
 // FUNCIONES
 async function sendSearch(e) {
@@ -30,4 +32,8 @@ function key(e) {
 	if (e.key == "Enter") {
 		sendSearch(e);
 	}
+}
+
+function showFilter(e){
+	ui.showGenres()
 }
