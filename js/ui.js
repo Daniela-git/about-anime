@@ -2,7 +2,17 @@ export class Interfaz{
     showSearchResults(animes) {
         let inicio_imagenes = document.querySelector(".inicio_imagenes");
         let load = document.querySelector(".load");
+        let search = document.querySelector(".search")
         let html = ''
+        if (animes.length == 0) {
+            let msg = document.createElement("h1")
+            msg.innerHTML="Sorry I can't find it"
+            msg.id = "msg"
+            search.appendChild(msg)
+            setTimeout(()=>{
+                document.getElementById("msg").remove()
+            },1500)
+        }
         animes.forEach(anime => {
             html += `
             <div class="search_result">

@@ -109,9 +109,16 @@ body{
     height: 1rem;
     margin: auto auto;
 }
-.search:hover{
+.search input:hover{
     background-color: rgb(112, 189, 224);
 }
+.search h1{
+    color: #493F3F;
+    padding: 5px;
+    font-style: italic;
+    font-weight: bold;
+}
+
 
 
 /* random button */

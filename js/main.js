@@ -19,8 +19,6 @@ async function sendSearch(e) {
 	let toSearch = getSearch();
 	let animes = await api.search(toSearch);
 	let anime = animes.results[0];
-	// image_url, title, episodios(si no es null), airing, score
-	// console.log(anime);
 	ui.showSearchResults(animes.results);
 }
 
