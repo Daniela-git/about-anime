@@ -72,6 +72,14 @@ header {
 	border-bottom-left-radius: 0.25rem;
     border-bottom-right-radius: 0.25rem;
     border-radius: 0.25rem;
+    transform: translateY(-200px);
+    transition: transform 0.5s ease-out;
+    
+    
+}
+.show-filtro{
+    transform: translateY(0);
+    transition: transform 0.5s ease-in-out;
 }
 .filtros::before{
     content: '';
@@ -93,13 +101,8 @@ header {
     border-bottom: 1px solid var(--grisPrimario);
 }
 
-/* .filtros .generos{
-    width: 10em;
-    overflow: hidden;
-} */
-
 .filtros .generos select{
-    width: 10em;
+    width: 13em;
     text-align:center;
     color: var(--grisPrimario);
     overflow: hidden;

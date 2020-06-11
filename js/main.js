@@ -7,13 +7,16 @@ const ui = new Interfaz.Interfaz();
 const input = document.getElementById("search");
 const button_search = document.getElementById("search_button");
 const load = document.querySelector(".load");
-// let filtros = document.getElementById("filtros")
+let filtros = document.getElementById("filtros")
 
 // EVENT LISTENERS
 button_search.addEventListener("click", sendSearch);
 input.addEventListener("keypress", key);
 document.addEventListener("DOMContentLoaded",showFilter)
-
+filtros.addEventListener("click",(e)=>{
+	document.querySelector(".filtros").classList.toggle('show-filtro')
+	
+})
 // FUNCIONES
 async function sendSearch(e) {
 	e.preventDefault();
