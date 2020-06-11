@@ -7,6 +7,7 @@ const ui = new Interfaz.Interfaz();
 const input = document.getElementById("search");
 const button_search = document.getElementById("search_button");
 const load = document.querySelector(".load");
+const loadRandom = document.querySelector(".load-random");
 const filtros = document.getElementById("filtros")
 const random = document.getElementById("random-button")
 
@@ -45,6 +46,7 @@ function showFilter(e){
 
 async function randomAnime(e){
 	e.preventDefault()
+	loadRandom.classList.add("show")
 	const page = Math.floor(Math.random() * 10) + 1;
 	console.log(page)
 	const result= await api.random(page)

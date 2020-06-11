@@ -31,7 +31,7 @@ export class Interfaz {
 	}
 	showRandom(animes) {
 		let inicio_imagenes = document.querySelector(".inicio_imagenes");
-		let load = document.querySelector(".load");
+		let loadRandom = document.querySelector(".load-random");
 		let html = "";
 		animes.forEach((anime) => {
 			html += `
@@ -45,7 +45,7 @@ export class Interfaz {
 					</ul>
 				</div>`;
 		});
-		load.classList.remove("show");
+		loadRandom.classList.remove("show");
 		inicio_imagenes.innerHTML = html;
 	}
 	setFilter() {
