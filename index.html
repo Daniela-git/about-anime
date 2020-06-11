@@ -31,24 +31,30 @@
 						</a>
 					</div>
 					<div id="filtros">
-						<a href="#">Filtros</a>
+						<a href="#">Filter</a>
 					</div>
 				</div>
 			</nav>
 			<!-- filtros -->
 			<div class="filtros">
 				<label for="">Genres</label>
-				<select name="generos" id="genres">
-					<option value="0">All genres</option>
-				</select>
+				<div class="generos">
+					<select name="generos" id="genres">
+						<option value="0">All genres</option>
+					</select>
+				</div>
 				<label for="">Season</label>
 				<div class="temporada">
-					<select name="temporada" id="seasons">
-						<option value="0">All seasons</option>
-					</select>
-					<select name="año" id="years">
-						<option value="0">All years</option>
-					</select>
+					<div class="tempodas">
+						<select name="temporada" id="seasons">
+							<option value="0">All seasons</option>
+						</select>
+					</div>
+					<div class="años">
+						<select name="año" id="years">
+							<option value="0">All years</option>
+						</select>
+					</div>
 				</div>
 			</div>
 		</header>
@@ -88,5 +94,3 @@
 
 	<script src="js/main.js" type="module"></script>
 </html>
-
-

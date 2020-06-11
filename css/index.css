@@ -20,6 +20,9 @@ body {
 	margin-left: 8rem;
 	margin-right: 8rem;
 }
+
+
+
 /************** HEADER */
 header {
 	position: relative;
@@ -49,8 +52,9 @@ header {
 }
 #filtros a {
 	font-size: 1.4375rem;
-    color: white;
+    color: #ffffff;
     margin-right: 4.5rem;
+    width: 4.125rem;
 }
 
 /* filtros */
@@ -81,6 +85,36 @@ header {
     left: 5.3rem;
 
 }
+.filtros label{
+    margin-top: 5px ;
+}
+.filtros select{
+    border:none;
+    border-bottom: 1px solid var(--grisPrimario);
+}
+
+/* .filtros .generos{
+    width: 10em;
+    overflow: hidden;
+} */
+
+.filtros .generos select{
+    width: 10em;
+    text-align:center;
+    color: var(--grisPrimario);
+    overflow: hidden;
+
+}
+
+
+.filtros .generos select::-webkit-scrollbar { 
+    display: none;
+}
+
+.filtros .temporada{
+    display: flex;
+}
+
 
 /************** MAIN */
 .container .inicio {
