@@ -29,19 +29,36 @@ export class Interfaz {
 			inicio_imagenes.innerHTML = html;
 		}
 	}
-	showGenres() {
-		let genres = document.getElementById("genres");
-        let generos = this.allGeners();
-        console.log(genres)
-        for (let i = 0; i  < generos.length; i++) {
-            let option = document.createElement('option')
-            option.value = i+1
-            option.innerHTML = generos[i]
-            genres.appendChild(option)
-            
-        }
+	setFilter() {
+        // se eligen cada uno de los selects y la lista que se va a usar para llenarlos
+		const genres = document.getElementById("genres");
+		const generos = this.allGeners();
+        const years = document.getElementById("years");
+        const anios = this.allYears()
+        const seasons = document.getElementById("seasons");
+        const temporada = ["Fall","Sumer","Spring","Winter"]
+        // mandamos la información necesaria para que se creen las opciones
+		this.setOptions(genres, generos);
+        this.setOptions(years, anios);
+        this.setOptions(seasons, temporada);
 	}
-
+	setOptions(element, list) {
+		for (let i = 0; i < list.length; i++) {
+			let option = document.createElement("option");
+			option.value = i + 1;
+			option.innerHTML = list[i];
+			element.appendChild(option);
+		}
+	}
+    allYears(){
+        let anios = []
+        const max = new Date().getFullYear()
+        const min = max - 61
+		for (let i = max; i > min; i--) {
+            anios.push(i)
+        }
+        return anios
+    }
 	allGeners() {
 		let genres = [
 			"Action",
@@ -87,7 +104,7 @@ export class Interfaz {
 			"Thriller",
 			"Seinen",
 			"Josei",
-        ];
-        return genres
+		];
+		return genres;
 	}
 }

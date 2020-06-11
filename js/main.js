@@ -4,15 +4,15 @@ import * as Interfaz from "/js/ui.js";
 // VARIABLES
 const api = new Api.Api();
 const ui = new Interfaz.Interfaz();
-let input = document.getElementById("search");
-let button_search = document.getElementById("search_button");
-let load = document.querySelector(".load");
-let filtros = document.getElementById("filtros")
+const input = document.getElementById("search");
+const button_search = document.getElementById("search_button");
+const load = document.querySelector(".load");
+// let filtros = document.getElementById("filtros")
 
 // EVENT LISTENERS
 button_search.addEventListener("click", sendSearch);
 input.addEventListener("keypress", key);
-filtros.addEventListener("click",showFilter)
+document.addEventListener("DOMContentLoaded",showFilter)
 
 // FUNCIONES
 async function sendSearch(e) {
@@ -35,5 +35,5 @@ function key(e) {
 }
 
 function showFilter(e){
-	ui.showGenres()
+	ui.setFilter()
 }
