@@ -8,22 +8,21 @@ const input = document.getElementById("search");
 const button_search = document.getElementById("search_button");
 const load = document.querySelector(".load");
 const loadRandom = document.querySelector(".load-random");
-const filtros = document.getElementById("filtros")
-const random = document.getElementById("random-button")
+const filtros = document.getElementById("filtros");
+const random = document.getElementById("random-button");
 
 // EVENT LISTENERS
-document.addEventListener("DOMContentLoaded",showFilter)
+document.addEventListener("DOMContentLoaded", showFilter);
 button_search.addEventListener("click", sendSearch);
 input.addEventListener("keypress", key);
-random.addEventListener("click",randomAnime)
-filtros.addEventListener("click",(e)=>{
-	document.querySelector(".filtros").classList.toggle('show-filtro')
-	
-})
+random.addEventListener("click", randomAnime);
+filtros.addEventListener("click", (e) => {
+	document.querySelector(".filtros").classList.toggle("show-filtro");
+});
 // FUNCIONES
 async function sendSearch(e) {
 	e.preventDefault();
-	load.classList.add("show")
+	load.classList.add("show");
 	let toSearch = getSearch();
 	let animes = await api.search(toSearch);
 	let anime = animes.results[0];
@@ -40,23 +39,19 @@ function key(e) {
 	}
 }
 
-function showFilter(e){
-	ui.setFilter()
+function showFilter(e) {
+	ui.setFilter();
 }
 
-async function randomAnime(e){
-	e.preventDefault()
-	loadRandom.classList.add("show")
+async function randomAnime(e) {
+	e.preventDefault();
+	loadRandom.classList.add("show");
 	const page = Math.floor(Math.random() * 10) + 1;
-	console.log(page)
-	const result= await api.random(page)
-	const animes = []
-	// mezclando el array
-	while(result.top.length !== 0){
-		let randomIndex = Math.floor(Math.random() * result.top.length)
-		animes.push(result.top[randomIndex])
-		result.top.splice(randomIndex,1)
-	}
-	ui.showRandom(animes.slice(0, 3))
-
+	console.log(page);
+	const result = await api.random(page);
+	const animes = [];
+	result.top.sort(() => {
+		Math.floor(Math.random() * result.top.length);
+	});
+	ui.showRandom(result.top.slice(0, 3));
 }
