@@ -1,5 +1,5 @@
-import * as Api from "/js/api.js";
-import * as Interfaz from "/js/ui.js";
+import * as Api from "./api.js";
+import * as Interfaz from "./ui.js";
 
 // VARIABLES
 const api = new Api.Api();
