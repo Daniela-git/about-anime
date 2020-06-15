@@ -257,7 +257,7 @@ header {
 	font-size: 0.9375rem;
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1430px) {
 	body {
 		font-size: 13px;
 
@@ -267,10 +267,14 @@ header {
 		height: 12.5rem;
 	}
 }
-@media (max-width: 1100px) {
+@media (max-width: 1050px) {
 	body {
 		font-size: 13px;
 		height: auto;
+	}
+	.container{
+		margin-left: 4rem;
+		margin-right: 4rem;
 	}
 	.container .inicio {
 		flex-direction: column;
@@ -288,10 +292,41 @@ header {
 
 	}
 	.text .sections p{
-		font-size: 2em;
+		font-size: 3rem;
 		width: 100%;
+	}
+	.text .sections h2{
+		font-size: 3.5rem;
+	}
+	#random-button{
+		font-size: 1rem;
 	}
 	.search{
 		width: 100%;
 	}
+}
+
+@media (max-width: 450px) {
+
+	body{
+		font-size: 9px;
+	}
+	.inicio_imagenes {
+		display: flex;
+		flex-direction: column;
+
+	}
+	.text .sections p{
+		font-size: 2rem;
+		width: 100%;
+	}
+	.text .sections h2{
+		font-size: 3rem;
+	}
+	#random-button{
+		font-size: 1rem;
+	}
+
+
+	
 }
