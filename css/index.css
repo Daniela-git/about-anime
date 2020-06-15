@@ -322,6 +322,9 @@ header {
 		display: flex;
 		flex-direction: column;
 	}
+	.inicio_imagenes .result {
+		margin-top: 0.625rem;
+	}
 	.text .sections p {
 		font-size: 2rem;
 		width: 100%;
