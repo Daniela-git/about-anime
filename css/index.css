@@ -165,7 +165,7 @@ ul {
 .main {
 	display: flex;
 }
-.text{
+.text {
 	width: 50%;
 }
 .text_section {
@@ -248,16 +248,16 @@ ul {
 }
 /* ------RESULTS----------- */
 
-.results{
-	margin: 1.25em ;
+.results {
+	margin: 1.25em;
 	width: 80%;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	column-gap: 1.875rem;
-	row-gap: 0.625rem;
+	column-gap: 1.875em;
+	row-gap: 0.625em;
 }
 
-.result{
+.result {
 	width: 100%;
 	margin: auto;
 	white-space: nowrap;
@@ -267,10 +267,8 @@ ul {
 	border-radius: 5px;
 	text-align: center;
 	padding: 0.3125em;
-
 }
-.result span{
-	
+.result span {
 	text-transform: uppercase;
 	color: var(--yellowPrimary);
 	font-weight: bold;
@@ -278,7 +276,6 @@ ul {
 	display: block;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	
 }
 .result img {
 	width: 80%;
@@ -287,9 +284,84 @@ ul {
 	margin-top: 0.3125rem;
 }
 
-.result ul{
+.result ul {
 	text-transform: capitalize;
 	text-align: center;
 	color: white;
 	/* font-size: 0.9375rem; */
+}
+
+@media (max-width: 992px) {
+	body {
+		font-size: 14px;
+	}
+	.container {
+		margin-left: 5rem;
+		margin-right: 5rem;
+	}
+	.main {
+		flex-direction: column;
+		align-items: center;
+	}
+	.text{
+		width: 100%;
+	}
+
+	.text_section {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		align-items: center;
+	}
+	.searchbar {
+		grid-template-columns: auto 3.125rem 0.625rem;
+	}
+	.filters {
+		right: 5em;
+	}
+}
+
+@media (max-width: 778px) {
+	body {
+		font-size: 12px;
+	}
+	.container {
+		margin-left: 4rem;
+		margin-right: 4rem;
+	}
+	.results {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.searchbar {
+		grid-template-columns: auto 2.125em 0.625em;
+	}
+	.filters {
+		right: 4em;
+	}
+	.genres-select{
+		width: 115%;
+	}
+	.seasons_select_type,
+	.seasons_select_years {
+		width: 130%;
+	}
+}
+
+@media (max-width: 576px) {
+	body {
+		font-size: 10px;
+	}
+	.container {
+		margin-left: 2rem;
+		margin-right: 2rem;
+	}
+	.results {
+		grid-template-columns: 1fr;
+	}
+	.searchbar {
+		grid-template-columns: auto 2.125em 0.325em;
+	}
+	.filters {
+		right: 2em;
+	}
 }

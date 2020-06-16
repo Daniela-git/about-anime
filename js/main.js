@@ -46,7 +46,7 @@ function showFilter(e) {
 
 async function randomAnime(e) {
 	e.preventDefault();
-	loadRandom.classList.add("show");
+	loadRandom.classList.add("show_load");
 	const page = Math.floor(Math.random() * 10) + 1;
 	console.log(page);
 	const result = await api.random(page);

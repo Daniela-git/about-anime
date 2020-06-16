@@ -47,7 +47,7 @@ export class Interfaz {
 			</ul>
 		</div>`;
 		});
-		loadRandom.classList.remove("show");
+		loadRandom.classList.remove("show_load");
 		main.innerHTML = html;
 	}
 	setFilter() {
