@@ -35,15 +35,15 @@ export class Interfaz {
 		let html = "";
 		animes.forEach((anime) => {
 			html += `
-				<div class="result">
-					<span>${anime.title}</span>
-					<img src="${anime.image_url}" alt="">
-					<ul class="features_anime">
-						<li>episodes: ${anime.episodes}</li>
-						<li>type: ${anime.type}</li>
-						<li>score: ${anime.score}</li>
-					</ul>
-				</div>`;
+			<div class="result">
+			<span>${anime.title}</span>
+			<img src="${anime.image_url}" alt="">
+			<ul class="features_anime">
+				<li>episodes: ${anime.episodes}</li>
+				<li>type: ${anime.type}</li>
+				<li>score: ${anime.score}</li>
+			</ul>
+		</div>`;
 		});
 		loadRandom.classList.remove("show");
 		inicio_imagenes.innerHTML = html;
