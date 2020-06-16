@@ -1,9 +1,10 @@
 export class Interfaz {
 	showSearchResults(animes) {
-		let inicio_imagenes = document.querySelector(".inicio_imagenes");
-		let load = document.querySelector(".load");
-		let search = document.querySelector(".search");
+		const main = document.querySelector(".results");
+		const load = document.querySelector(".search_load");
+		const search = document.querySelector(".search");
 		let html = "";
+	// vemos si hay o no resultados para saber que mostrar
 		if (animes.length == 0) {
 			let msg = document.createElement("h1");
 			msg.innerHTML = "Sorry I can't find it";
@@ -26,12 +27,12 @@ export class Interfaz {
 				</div>`;
 			});
 			load.classList.remove("show");
-			inicio_imagenes.innerHTML = html;
+			main.innerHTML = html;
 		}
 	}
 	showRandom(animes) {
-		let inicio_imagenes = document.querySelector(".inicio_imagenes");
-		let loadRandom = document.querySelector(".load-random");
+		const main = document.querySelector(".results");
+		const loadRandom = document.querySelector(".random_part_load");
 		let html = "";
 		animes.forEach((anime) => {
 			html += `
@@ -46,15 +47,15 @@ export class Interfaz {
 		</div>`;
 		});
 		loadRandom.classList.remove("show");
-		inicio_imagenes.innerHTML = html;
+		main.innerHTML = html;
 	}
 	setFilter() {
 		// se eligen cada uno de los selects y la lista que se va a usar para llenarlos
-		const genres = document.getElementById("genres");
+		const genres = document.querySelector(".genres-select");
 		const generos = this.allGeners();
-		const years = document.getElementById("years");
+		const years = document.querySelector(".seasons_select_years");
 		const anios = this.allYears();
-		const seasons = document.getElementById("seasons");
+		const seasons = document.querySelector(".seasons_select_type");
 		const temporada = ["Fall", "Sumer", "Spring", "Winter"];
 		// mandamos la información necesaria para que se creen las opciones
 		this.setOptions(genres, generos);
@@ -62,6 +63,7 @@ export class Interfaz {
 		this.setOptions(seasons, temporada);
 	}
 	setOptions(element, list) {
+		console.log(element)
 		for (let i = 0; i < list.length; i++) {
 			let option = document.createElement("option");
 			option.value = i + 1;

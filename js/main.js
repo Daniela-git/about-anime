@@ -4,12 +4,12 @@ import * as Interfaz from "./ui.js";
 // VARIABLES
 const api = new Api.Api();
 const ui = new Interfaz.Interfaz();
-const input = document.getElementById("search");
-const button_search = document.getElementById("search_button");
-const load = document.querySelector(".load");
-const loadRandom = document.querySelector(".load-random");
-const filtros = document.getElementById("filtros");
-const random = document.getElementById("random-button");
+const input = document.querySelector(".searchbar_input");
+const button_search = document.querySelector(".searchbar_button");
+const load = document.querySelector(".search_load");
+const loadRandom = document.querySelector(".random_part_load");
+const filtros = document.getElementById("filters");
+const random = document.querySelector(".random_part_button");
 
 // EVENT LISTENERS
 document.addEventListener("DOMContentLoaded", showFilter);
@@ -17,7 +17,8 @@ button_search.addEventListener("click", sendSearch);
 input.addEventListener("keypress", key);
 random.addEventListener("click", randomAnime);
 filtros.addEventListener("click", (e) => {
-	document.querySelector(".filtros").classList.toggle("show-filtro");
+	console.log('0')
+	document.querySelector(".filters").classList.toggle("show_filters");
 });
 // FUNCIONES
 async function sendSearch(e) {

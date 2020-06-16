@@ -70,7 +70,7 @@ ul {
 	right: 8em;
 	top: 5em;
 	width: 16em;
-	background-color: var(--yellowsecond);
+	background-color: white;
 	border-radius: 4px 0 4px 4px;
 	box-shadow: 3px 3px 4px var(--grayPrimary);
 	transform: translateY(-8em);
@@ -95,7 +95,7 @@ ul {
 	top: -2.5em;
 	right: 0em;
 	border-top: 20px solid transparent;
-	border-bottom: 20px solid var(--yellowsecond);
+	border-bottom: 20px solid white;
 	border-left: 20px solid transparent;
 	border-right: 20px solid transparent;
 	pointer-events: none;
@@ -125,7 +125,7 @@ ul {
 	border: none;
 	border-bottom: 1px solid var(--grayPrimary);
 	text-align: center;
-	background-color: var(--yellowsecond);
+	background-color: white;
 	color: var(--grayPrimary);
 	cursor: pointer;
 }
@@ -149,13 +149,16 @@ ul {
 	margin: 10px;
 	width: 8em;
 	height: 2em;
-	background-color: var(--grayPrimary);
-	color: white;
+	background-color: var(--yellowPrimary);
 	border: none;
+	font-size: 1em;
+	font-weight: bold;
 	cursor: pointer;
+	border-radius: 4px;
 }
 .filters_button:hover {
-	background-color: var(--filterHover);
+	background-color: var(--yellowsecond);
+	color: black;
 }
 /* ----------MAIN------------- */
 
@@ -238,7 +241,10 @@ ul {
 	font-size: 1em;
 	cursor: pointer;
 }
-
+.random_part_button:hover {
+	background-color: var(--grayPrimary);
+	color: var(--yellowPrimary);
+}
 /* ------RESULTS----------- */
 
 .results{
