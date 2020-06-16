@@ -117,6 +117,7 @@ ul {
 	font-size: 2em;
 }
 
+/* searchbar */
 .searchbar{
 	display: grid;
 	grid-template-columns: auto 3.125rem 0.625rem;
@@ -145,7 +146,7 @@ ul {
 	border-top-left-radius: 4px;
 	border-radius: 4px 0 0 4px;
 }
-.searchbar_load{
+.searchbar_load, .random_part_load{
 	padding: 0.625rem;
 	visibility: hidden;
 }
@@ -153,7 +154,20 @@ ul {
 .show_load{
 	visibility: visible;
 }
-/* search text */
 
+/* random button */
 
+.random_part{
+	margin-top: 0.625em;
+	display: grid;
+	grid-template-columns: 150px 0.625rem;
+	align-items: center;
+}
+.random_part_button{
+	background-color: var(--yellowPrimary);
+	border: 3px solid var(--grayPrimary);
+	border-radius: 4px;
+	height: 3.5em;
+	font-size: 1em;
+}
 
