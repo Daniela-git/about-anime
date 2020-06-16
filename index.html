@@ -30,72 +30,88 @@
 							<span>anime</span>
 						</a>
 					</div>
-					<div id="filtros">
+					<div id="filters">
 						Filter
 					</div>
 				</div>
 			</nav>
-			<!-- filtros -->
-			<div class="filtros">
+			<!-- end navbar -->
+			<!-- filters -->
+			<div class="filters">
+				<!-- genres -->
 				<label for="">Genres</label>
-				<div class="generos">
-					<select name="generos" id="genres">
-						<option value="0">All genres</option>
+				<div class="genres">
+					<select name="generos" class="genres-select">
+						<option value="0" class="genres-options"
+							>All genres</option
+						>
 					</select>
 				</div>
+				<!-- end genres -->
+				<!-- season -->
 				<label for="">Season</label>
-				<div class="temporada">
-					<div class="tempodas">
-						<select name="temporada" id="seasons">
+				<div class="seasons">
+					<div class="seasons_type">
+						<select name="season" class="seasons_select_type">
 							<option value="0">All seasons</option>
 						</select>
 					</div>
-					<div class="años">
-						<select name="año" id="years">
+					<div class="seasons_years">
+						<select name="año" class="seasons_select_years">
 							<option value="0">All years</option>
 						</select>
 					</div>
 				</div>
-				<button>Filter</button>
+				<!-- end season -->
+				<button class="btn btn_filters">Filter</button>
 			</div>
 		</header>
+
+		<!-- main -->
 		<div class="container">
-			<main class="inicio">
+			<main class="main">
 				<section class="text">
-					<!--secion de informacion-->
-					<article class="sections">
+					<!--information section-->
+					<!-- search block -->
+					<article class="text_section text_search">
 						<h2>Search</h2>
 						<p>about your favorites animes</p>
-						<div class="search">
-							<input id="search" type="text" />
-							<button id="search_button">
+						<div class="searchbar">
+							<input class="searchbar_input" type="text" />
+							<button id="searchbar_button">
 								<i class="fa fa-search search"></i>
 							</button>
+							<img
+								class="search_load"
+								src="images/loading.svg"
+								alt="loading"
+							/>
 						</div>
-
-						<img
-							class="load"
-							src="images/loading.svg"
-							alt="loading"
-						/>
 					</article>
-					<article class="sections">
+					<!-- end search block -->
+					<!-- random block -->
+					<article class="text_section text_random">
 						<h2>Find</h2>
 						<p>new ones</p>
-						<button id="random-button">Random anime</button>
-						<img
-							class="load-random"
-							src="images/loading.svg"
-							alt="loading"
-						/>
+						<div class="random_part">
+							<button class="random_part_button">Random anime</button>
+							<img
+								class="random_part_load"
+								src="images/loading.svg"
+								alt="loading"
+							/>
+						</div>
 					</article>
+					<!-- end random block -->
+					<!-- end information section -->
 				</section>
 				<!--secion de imagenes de la busqueda-->
-				<section class="inicio_imagenes">
+				<section class="results">
 					<!-- cargan con el js -->
 				</section>
 			</main>
 		</div>
+		<!-- end main -->
 	</body>
 
 	<script src="js/main.js" type="module"></script>
