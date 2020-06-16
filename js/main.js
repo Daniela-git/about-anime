@@ -10,16 +10,18 @@ const load = document.querySelector(".searchbar_load");
 const loadRandom = document.querySelector(".random_part_load");
 const filtros = document.getElementById("filters");
 const random = document.querySelector(".random_part_button");
+const filter_button = document.querySelector('.filters_button')
 
 // EVENT LISTENERS
 document.addEventListener("DOMContentLoaded", showFilter);
+filter_button.addEventListener('click', callFilter)
 button_search.addEventListener("click", sendSearch);
 input.addEventListener("keypress", key);
 random.addEventListener("click", randomAnime);
 filtros.addEventListener("click", (e) => {
-	console.log('0')
 	document.querySelector(".filters").classList.toggle("show_filters");
 });
+
 // FUNCIONES
 async function sendSearch(e) {
 	e.preventDefault();
@@ -56,3 +58,13 @@ async function randomAnime(e) {
 	});
 	ui.showRandom(result.top.slice(0, 3));
 }
+
+export function callFilter(){
+	const selects= document.querySelectorAll('select')
+	let selectesOptions = []
+	selects.forEach((select)=>{
+		selectesOptions.push(select.options[select.selectedIndex].value)
+		
+	})
+	return selectesOptions
+ }

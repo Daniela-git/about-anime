@@ -153,6 +153,8 @@ ul {
 	border: none;
 	font-size: 1em;
 	font-weight: bold;
+	
+	text-align: center;
 	cursor: pointer;
 	border-radius: 4px;
 }

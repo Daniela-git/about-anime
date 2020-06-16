@@ -19,7 +19,9 @@ export class Interfaz {
 				html += `
 				<div class="result">
 					<span>${anime.title}</span>
-					<img src="${anime.image_url}" alt="">
+					<a href=${anime.url} target="_blank">
+						<img src="${anime.image_url}" alt="${anime.title}">
+					</a>
 					<ul class="features_anime">
 						<li>episodes: ${anime.episodes}</li>
 						<li>airing: ${anime.airing}</li>
@@ -39,7 +41,9 @@ export class Interfaz {
 			html += `
 			<div class="result">
 			<span>${anime.title}</span>
-			<img src="${anime.image_url}" alt="">
+			<a href=${anime.url} target="_blank">
+			<img src="${anime.image_url}" alt="${anime.title}">
+			</a>
 			<ul class="features_anime">
 				<li>episodes: ${anime.episodes}</li>
 				<li>type: ${anime.type}</li>
