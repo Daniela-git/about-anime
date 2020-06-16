@@ -32,7 +32,6 @@ ul {
 	background-color: var(--grayPrimary);
 }
 .navbar .flexbox {
-	/* margin-top: 1em; */
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -42,6 +41,7 @@ ul {
 /* logo */
 .navbar_logo {
 	color: var(--yellowPrimary);
+	cursor: pointer;
 }
 
 .navbar_logo h1 {
@@ -57,7 +57,46 @@ ul {
 #filters {
 	color: white;
 	font-size: 1.5em;
+	cursor: pointer;
 }
 
+/* ----------FILTERS------------- */
+
+.filters{
+	/* box */
+	position: absolute;
+	right: 8em;
+	top: 5em;
+	width: 16em;
+	background-color: white;
+	border-radius: 0 0 4px 4px;
+	box-shadow:3px 3px 4px var(--grayPrimary);
+	transform: translateY(-8em) ;
+	/* content */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	visibility: hidden;
+}
+
+.show_filters{
+	visibility: visible;
+	transform: translateY(0);
+	transition: transform 0.5s ease-out;
+}
+/* flecha */
+.filters:before{
+	content: '';
+	display: block;
+	position: absolute;
+	width: 0;
+	top: -2.5em;
+	right: 0em;
+	border-top: 20px solid transparent;
+	border-bottom: 20px solid white;
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	pointer-events: none;
+}
 
 
