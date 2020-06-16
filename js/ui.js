@@ -1,8 +1,8 @@
 export class Interfaz {
 	showSearchResults(animes) {
 		const main = document.querySelector(".results");
-		const load = document.querySelector(".search_load");
-		const search = document.querySelector(".search");
+		const load = document.querySelector(".searchbar_load");
+		const search = document.querySelector(".searchbar");
 		let html = "";
 	// vemos si hay o no resultados para saber que mostrar
 		if (animes.length == 0) {
@@ -10,6 +10,7 @@ export class Interfaz {
 			msg.innerHTML = "Sorry I can't find it";
 			msg.id = "msg";
 			search.appendChild(msg);
+			load.classList.remove("show_load");
 			setTimeout(() => {
 				document.getElementById("msg").remove();
 			}, 1500);
@@ -26,7 +27,7 @@ export class Interfaz {
 					</ul>
 				</div>`;
 			});
-			load.classList.remove("show");
+			load.classList.remove("show_load");
 			main.innerHTML = html;
 		}
 	}
@@ -63,7 +64,6 @@ export class Interfaz {
 		this.setOptions(seasons, temporada);
 	}
 	setOptions(element, list) {
-		console.log(element)
 		for (let i = 0; i < list.length; i++) {
 			let option = document.createElement("option");
 			option.value = i + 1;

@@ -6,7 +6,7 @@ const api = new Api.Api();
 const ui = new Interfaz.Interfaz();
 const input = document.querySelector(".searchbar_input");
 const button_search = document.querySelector(".searchbar_button");
-const load = document.querySelector(".search_load");
+const load = document.querySelector(".searchbar_load");
 const loadRandom = document.querySelector(".random_part_load");
 const filtros = document.getElementById("filters");
 const random = document.querySelector(".random_part_button");
@@ -23,7 +23,7 @@ filtros.addEventListener("click", (e) => {
 // FUNCIONES
 async function sendSearch(e) {
 	e.preventDefault();
-	load.classList.add("show");
+	load.classList.add("show_load");
 	let toSearch = getSearch();
 	let animes = await api.search(toSearch);
 	let anime = animes.results[0];
